@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+receipt
+</title>
+
+<style>
+#print
+{
+position:absolute;
+bottom:12%;
+right:45%;
+}
+#div2
+{
+position:absolute;
+bottom:5%;
+right:45%;
+}
+td
+{
+height:50px;
+text-align:center;
+}
+</style>
+
+
+<script type="text/javascript">
+window.addEventListener('load',()=>{
+const fname=sessionStorage.getItem('NAME');
+const lastname=sessionStorage.getItem('LASTNAME');
+const fathername=sessionStorage.getItem('FATHERSNAME');
+
+const studentid=sessionStorage.getItem('SID');
+const emailid=sessionStorage.getItem('EMAILID');
+const dateob=sessionStorage.getItem('DOB');
+const mobileno=sessionStorage.getItem('MOBILEN0');
+
+document.getElementById("first-name").innerHTML=fname;
+document.getElementById("last-name").innerHTML=lastname;
+document.getElementById("fathers-name").innerHTML=fathername;
+
+
+document.getElementById("student-id").innerHTML=studentid;
+
+document.getElementById("email-id").innerHTML=emailid;
+document.getElementById("date-b").innerHTML=dateob;
+document.getElementById("mobile-no").innerHTML=mobileno;
+
+})
+function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>
+<body>
+<div id="printableArea">
+<h3>Payment done successfully</h3>
+
+<h4>
+<table align="center">
+<tr>
+<td>Name:</td>
+<td><span id="first-name"/>
+</td>
+</tr>
+<tr>
+<td>Last name:</td>
+<td>
+<span id="last-name"/>
+</td>
+<tr>
+<tr>
+<td>Fathers name:</td>
+<td><span id="fathers-name"/>
+</td>
+</tr>
+<tr>
+<td>Mobile number:</td>
+<td><span id="mobile-no"/>
+</td>
+<tr>
+<tr>
+<td>Student id:</td>
+<td>
+<span id="student-id"/>
+</td>
+<tr>
+<tr>
+<td>Email id:</td>
+<td><span id="email-id"/>
+</td>
+</tr>
+<tr>
+<td>Date of birth:</td>
+<td><span id="date-b"/>
+</td>
+<tr>
+</h4>
+show the printout of the receipt for taking TC
+</div>
+<br>
+<button onclick='printDiv("printableArea")'  value="print receipt" id="print">Print receipt</button>
+
+<div id="download">
+     <form action="roolno.html">
+          <button onclick="tc.html" id="div2">Download TC</button>
+
+     </form>
+</div>
+<br>
+
+
+</body>
+</head>

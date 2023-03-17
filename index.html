@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>student login</title>
+	<script type="text/javascript">
+	function validate()
+	{
+  let form = document.login;
+   if( form.uname.value == "" )
+   {
+     alert( "Enter Your user Name!" );
+     form.unames.focus() ;
+     return false;
+   }
+   if( form.pass.value == "" )
+   {
+     alert( "Enter Your password" );
+     form.pass.focus() ;
+     return false;
+   }
+  
+	}
+</script>
+</head>
+<body>
+<h2 style="color:blue;">Login</h2>
+	<form onsubmit="return validate()" name="login" method="post" action="s_details.html">
+	Username:<input id="uname"  type="text"/>
+	<br><br>
+	password:<input id="pass" type="password"/>
+	<br>
+	<br>
+	<input type="submit" onclick="validate()">
+	</form>
+</body>
+</html>
